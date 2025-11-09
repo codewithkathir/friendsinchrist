@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assert/images/favicon.ico">
+    <title>Friendsinchrist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assert/css/style.css">
+      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+<body class="bg-gray-50 max-w-[1560px] mx-auto">
+    <!-- ===================== HEADER ===================== -->
+   <header id="header" class="flex shadow-lg py-4 px-4 sm:px-10 min-h-[70px] tracking-wide mx-auto z-50 fixed w-full max-w-[1560px] top-0 transition-all duration-300">
+
+    <div class="flex flex-wrap items-center justify-between gap-5 w-full">
+        
+            <a href="#" class="max-sm:hidden">
+                <img src="./assert/images/logo-with-black.png"  id="site-logo" alt="logo" class="w-36" />
+            </a>
+            <a href="#" class="hidden max-sm:block">
+                <img src="./assert/images/logo.png" alt="logo"  id="site-mobile-logo" class="w-9" />
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="dropdown relative group">
+                    <button class="flex items-center gap-1 font-semibold text-white hover:text-indigo-600 py-2">
+                        Mother Mary
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div
+                        class="dropdown-menu absolute left-0 top-full bg-white shadow-xl rounded-lg mt-1 w-52 py-2 text-sm z-50">
+                        <a href="#"
+                            class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Rosary</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Dagma</a>
+                    </div>
+                </div>
+
+                <a href="https://quiz.friendsinchrist.in/" class="font-semibold text-white  hover:text-indigo-600 py-2">Bible Quiz</a>
+
+                <div class="dropdown relative group">
+                    <button class="flex items-center gap-1 font-semibold text-white  hover:text-indigo-600 py-2">
+                        Catechism
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div
+                        class="dropdown-menu absolute left-0 top-full bg-white shadow-xl rounded-lg mt-1 w-48 py-2 text-sm z-50">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Basic
+                            Prayers</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">7
+                            Sacraments</a>
+                    </div>
+                </div>
+
+                <a href="/liturgy.html" class="font-semibold text-white  hover:text-indigo-600 py-2">Liturgy</a>
+
+                <button
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg">Donate</button>
+            </div>
+
+            <!-- Mobile Buttons -->
+            <div class="flex items-center gap-4 lg:hidden">
+                <button class="bg-indigo-600 hover:bg-indigo-700 !text-white font-semibold py-2 px-4 rounded-lg text-sm">
+                    Donate
+                </button>
+                <button id="mobileMenuToggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200">
+                    <svg class="w-6 h-6 fill-gray-800" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"></div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="mobile-menu fixed top-0 left-0 h-full w-4/5 max-w-sm bg-white shadow-2xl z-50 overflow-y-auto lg:hidden">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <a href="#">
+                        <img src="./assert/images/logo.png" alt="logo" class="w-32" />
+                    </a>
+                    <button id="mobileMenuClose" class="p-2 rounded-full bg-gray-100 hover:bg-gray-200">
+                        ✕
+                    </button>
+                </div>
+
+                <nav class="space-y-4">
+                    <div class="mobile-dropdown">
+                        <button
+                            class="mobile-dropdown-toggle flex justify-between items-center w-full font-semibold text-gray-700 py-3 border-b border-gray-200">
+                            Mother Mary
+                            <svg class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-4 pt-2 space-y-2">
+                            <a href="#" class="block py-2 text-gray-600 hover:text-indigo-600">Rosary</a>
+                            <a href="#" class="block py-2 text-gray-600 hover:text-indigo-600">Dagma</a>
+                        </div>
+                    </div>
+
+                    <a href="#"
+                        class="block font-semibold text-gray-700 py-3 border-b border-gray-200 hover:text-indigo-600">Bible
+                        Quiz</a>
+
+                    <div class="mobile-dropdown">
+                        <button
+                            class="mobile-dropdown-toggle flex justify-between items-center w-full font-semibold text-gray-700 py-3 border-b border-gray-200">
+                            Catechism
+                            <svg class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-4 pt-2 space-y-2">
+                            <a href="#" class="block py-2 text-gray-600 hover:text-indigo-600">Basic Prayers</a>
+                            <a href="#" class="block py-2 text-gray-600 hover:text-indigo-600">7 Sacraments</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== HERO / SLIDER ===================== -->
+<section class="relative w-full h-[800px] overflow-hidden sop-[86px]">
+  <div id="slider" class="relative w-full max-h-[800px] h-full">
+    <!-- Slide 1 -->
+    <div class="absolute w-full h-full opacity-0 slide">
+      <img src="./assert/images/Home Page/Friend in Christ Banner.jpeg" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center px-6">
+        <p class="text-white text-lg md:text-xl font-medium mb-3 small-text opacity-0">Growing Together in Faith and Family</p>
+        <h1 class="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4 big-title opacity-0">Growing Together in Faith and Family</h1>
+        <p class="text-white text-base md:text-lg mb-6 para opacity-0 max-w-3xl mx-auto">
+         Welcome to Friends in Christ – where families, friends, and communities unite in love, prayer, and service
+        </p>
+        <button class="bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-md font-semibold button opacity-0">
+          Join Us in Faith
+        </button>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="absolute w-full h-full opacity-0 slide">
+      <img src="./assert/images/Home Page/Banner 2.jpg" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center px-6">
+        <p class="text-white text-lg md:text-xl font-medium mb-3 small-text opacity-0">Growing Together in Faith and Family</p>
+        <h1 class="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4 big-title opacity-0">Growing Together in Faith and Family</h1>
+        <p class="text-white text-base md:text-lg mb-6 para opacity-0 max-w-3xl mx-auto">
+         Welcome to Friends in Christ – where families, friends, and communities unite in love, prayer, and service
+        </p>
+        <button class="bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-md font-semibold button opacity-0">
+          Join Us in Faith
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===================== Welcome / Card ===================== -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+<!-- Card 1 -->
+<div class="relative bg-white shadow-md rounded-md p-6 flex flex-col items-center text-center overflow-hidden group transition-all duration-300 hover:shadow-lg">
+  <div class="absolute bottom-0 left-0 w-full bg-purple-600 bg-opacity-60 h-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-0"></div>
+
+  <!-- Icon -->
+  <div class="relative z-10 flex items-center justify-center mb-4 text-indigo-600 group-hover:text-white transition-colors duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-9a3 3 0 013-3h12a3 3 0 013 3v9M3 10h18M9 21V9m6 12V9" />
+    </svg>
+  </div>
+
+  <!-- Text -->
+  <h3 class="relative z-10 text-lg font-semibold mb-2 text-gray-800 group-hover:text-white transition-colors duration-300">
+    Our Church
+  </h3>
+  <p class="relative z-10 text-gray-600 group-hover:text-white text-sm transition-colors duration-300">
+    Together We Grow in Faith, Hope, and Love.
+  </p>
+</div>
+
+<!-- Card 2 -->
+<div class="relative bg-white shadow-md rounded-md p-6 flex flex-col items-center text-center overflow-hidden group transition-all duration-300 hover:shadow-lg">
+  <div class="absolute bottom-0 left-0 w-full bg-purple-600 bg-opacity-60 h-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-0"></div>
+
+  <!-- Icon -->
+  <div class="relative z-10 flex items-center justify-center mb-4 text-indigo-600 group-hover:text-white transition-colors duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20h6v-2a4 4 0 00-4-4H9m-5 0h4a4 4 0 014 4v2m0-16a4 4 0 110 8 4 4 0 010-8zm6 0a4 4 0 110 8 4 4 0 010-8z" />
+    </svg>
+  </div>
+
+  <!-- Text -->
+  <h3 class="relative z-10 text-lg font-semibold mb-2 text-gray-800 group-hover:text-white transition-colors duration-300">
+    Ministries
+  </h3>
+  <p class="relative z-10 text-gray-600 group-hover:text-white text-sm transition-colors duration-300">
+    Where Faith Becomes Action.
+  </p>
+</div>
+
+<!-- Card 3 -->
+<div class="relative bg-white shadow-md rounded-md p-6 flex flex-col items-center text-center overflow-hidden group transition-all duration-300 hover:shadow-lg">
+  <div class="absolute bottom-0 left-0 w-full bg-purple-600 bg-opacity-60 h-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-0"></div>
+
+  <!-- Icon -->
+  <div class="relative z-10 flex items-center justify-center mb-4 text-indigo-600 group-hover:text-white transition-colors duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+  </div>
+
+  <!-- Text -->
+  <h3 class="relative z-10 text-lg font-semibold mb-2 text-gray-800 group-hover:text-white transition-colors duration-300">
+    Events
+  </h3>
+  <p class="relative z-10 text-gray-600 group-hover:text-white text-sm transition-colors duration-300">
+    Events That Bring Our Church Family Closer.
+  </p>
+</div>
+
+<!-- Card 4 -->
+<div class="relative bg-white shadow-md rounded-md p-6 flex flex-col items-center text-center overflow-hidden group transition-all duration-300 hover:shadow-lg">
+  <div class="absolute bottom-0 left-0 w-full bg-purple-600 bg-opacity-60 h-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-0"></div>
+
+  <!-- Icon -->
+  <div class="relative z-10 flex items-center justify-center mb-4 text-indigo-600 group-hover:text-white transition-colors duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 20v-2c0-2.21 3.58-4 6-4s6 1.79 6 4v2" />
+    </svg>
+  </div>
+
+  <!-- Text -->
+  <h3 class="relative z-10 text-lg font-semibold mb-2 text-gray-800 group-hover:text-white transition-colors duration-300">
+    Community
+  </h3>
+  <p class="relative z-10 text-gray-600 group-hover:text-white text-sm transition-colors duration-300">
+    Faith, Serving People, Changing Lives.
+  </p>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===================== video / Card ===================== -->
+<section class="pb-16 bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center0 gap-10">
+    
+    <!-- Video Thumbnail -->
+    <div class="relative cursor-pointer group w-full md:w-1/2 overflow-hidden">
+      <img 
+        src="./assert/images/Home Page/About US.jpg" 
+        alt="Video Thumbnail" 
+        class="rounded-sm shadow-md w-full transition-transform duration-300 ease-in-out group-hover:scale-105"
+      >
+      <div class="absolute inset-0 bg-black bg-opacity-40 rounded-sm flex items-center justify-center group-hover:bg-opacity-60 transition">
+            <div class="bg-purple-600 rounded-full p-5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+    </div>
+
+    <!-- Text Content -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center0 text-center md:text-left mt-10">
+      <p class="text-purple-600 text-sm uppercase mb-2 tracking-wider">Shortly About Us</p>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4 leading-tight">Welcome to Our Christ</h2>
+      <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+        At Friends in Christ, we believe that faith is not just lived on Sundays but every day, in every family, and in every act of kindness.<br>
+ Together, we celebrate Christ’s love, deepen our spiritual journey, and build a supportive family of believers.<br><br>
+ "For where two or three gather in my name, there am I with them." (Matthew 18:20)"
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== swiper / Card ===================== -->
+<section class="pb-16 bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12">
+    <!-- Slider -->
+    <div class="relative">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+<div class="swiper-wrapper">
+
+  <!-- Slide 1 -->
+  <div class="swiper-slide group relative overflow-hidden rounded-sm shadow-lg">
+    <img
+      src="./assert/images/Home Page/Worship Together.jpg"
+      alt="Slide 1"
+      class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+    >
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gray-900/70 group-hover:bg-purple-600 group-hover:bg-opacity-60 transition-all duration-500 flex flex-col justify-center items-start p-6">
+      <h3 class="text-white group-hover:text-white text-lg font-semibold mb-1 transition-colors duration-300">Worship Together:</h3>
+      <p class="text-white group-hover:text-white text-sm mb-3 transition-colors duration-300">Join us for Holy Mass, prayer services, and spiritual retreats.</p>
+      <button class="bg-white text-purple-600 px-4 py-2 font-semibold text-sm hover:bg-purple-700 hover:text-white transition">
+        Read More
+      </button>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="swiper-slide group relative overflow-hidden rounded-sm shadow-lg">
+    <img
+      src="./assert/images/Home Page/Support Family.jpg"
+      alt="Slide 2"
+      class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+    >
+    <div class="absolute inset-0 bg-gray-900/70 group-hover:bg-purple-600 group-hover:bg-opacity-60 transition-all duration-500 flex flex-col justify-center items-start p-6">
+      <h3 class="text-white group-hover:text-white text-lg font-semibold mb-1 transition-colors duration-300">Support Families:</h3>
+      <p class="text-white group-hover:text-white text-sm mb-3 transition-colors duration-300">Programs that strengthen marriages, parenting, and family values.</p>
+      <button class="bg-white text-purple-600 px-4 py-2 font-semibold text-sm hover:bg-purple-700 hover:text-white transition">
+        Read More
+      </button>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="swiper-slide group relative overflow-hidden rounded-sm shadow-lg">
+    <img
+      src="./assert/images/Home Page/Community Outreach.jpg"
+      alt="Slide 3"
+      class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+    >
+    <div class="absolute inset-0 bg-gray-900/70 group-hover:bg-purple-600 group-hover:bg-opacity-60 transition-all duration-500 flex flex-col justify-center items-start p-6">
+      <h3 class="text-white group-hover:text-white text-lg font-semibold mb-1 transition-colors duration-300">Community Outreach:</h3>
+      <p class="text-white group-hover:text-white text-sm mb-3 transition-colors duration-300">Helping the poor, supporting the needy, and uplifting communities.</p>
+         <button class="bg-white text-purple-600 px-4 py-2 font-semibold text-sm hover:bg-purple-700 hover:text-white transition">
+        Read More
+      </button>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="swiper-slide group relative overflow-hidden rounded-sm shadow-lg">
+    <img
+      src="./assert/images/Home Page/Faith Formation.jpg"
+      alt="Slide 4"
+      class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+    >
+    <div class="absolute inset-0 bg-gray-900/70 group-hover:bg-purple-600 group-hover:bg-opacity-60 transition-all duration-500 flex flex-col justify-center items-start p-6">
+      <h3 class="text-white group-hover:text-white text-lg font-semibold mb-1 transition-colors duration-300">Faith Formation:</h3>
+      <p class="text-white group-hover:text-white text-sm mb-3 transition-colors duration-300">Bible study groups, catechism for children, and youth programs.</p>
+         <button class="bg-white text-purple-600 px-4 py-2 font-semibold text-sm hover:bg-purple-700 hover:text-white transition">
+        Read More
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+        <!-- Prev / Next Buttons BELOW swiper-wrapper, right side -->
+       
+
+      </div>
+       <div class="flex justify-end mt-3 gap-2 absolute right-[41px] bottom-[-42px] hidden">
+           <div class="swiper-button-prev px-3 py-1 bg-white border-1 text-black font-semibold text-sm cursor-pointer hover:bg-purple-600 hover:text-white transition">
+             
+           </div>
+
+          <div class="swiper-button-next px-3 py-1 bg-white border-1 text-black font-semibold text-sm cursor-pointer hover:bg-purple-600 hover:text-white transition">
+            
+          </div>
+          
+        
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CTA / Card ===================== -->
+<section class="relative pb-16 bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12">
+    <!-- Background Image -->
+    <div
+      class="relative bg-center bg-cover overflow-hidden"
+      style="background-image: url('./assert/images/Home\ Page/Faith Formation.jpg');"
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-10 sm:py-18 text-white">
+        <!-- Title -->
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
+           Test your knowledge of God’s Word!
+        </h2>
+
+        <!-- Subtitle -->
+        <p class="max-w-2xl text-lg text-gray-200 mb-8">
+           Join our interactive Bible Quiz every week and grow deeper in understanding the Scriptures.
+        </p>
+
+        <!-- CTA Button -->
+        <a
+          href="#"
+          class="bg-purple-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg"
+        >
+          Start the Quiz
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== Video / Card ===================== -->
+
+ <section class="pb-16">
+
+    <div class="container mx-auto px-4 lg:px-12">
+       <h2 class="text-3xl md:text-4xl font-semibold mb-4 leading-tight text-center">Our Videos</h2>
+      <p class="text-gray-600 text-base md:text-lg leading-relaxed text-center mb-16">
+        Watch sermons, family testimonies, choir performances, and inspiring messages from our parish community.
+      </p>
+      <!-- Top Main Video + Description -->
+      <div class="grid md:grid-cols-2 gap-8 items-center0 mb-12">
+        <!-- Video Thumbnail -->
+        <div class="relative cursor-pointer group" id="mainVideoThumb">
+          <img src="https://fastly.picsum.photos/id/1015/1600/900.jpg?hmac=EOuXicWfn3JeWPUPzTYgiikjK9Yygem7S3HiRzoT-9w" 
+               alt="Main Video" class="rounded-sm w-full object-cover shadow-lg">
+          <div class="absolute inset-0 bg-black bg-opacity-40 rounded-sm flex items-center justify-center group-hover:bg-opacity-60 transition">
+            <div class="bg-purple-600 rounded-full p-5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="mt-10">
+          <p class="text-sm text-red-500 mb-2">Sep 10, 2025</p>
+          <h2 class="text-3xl font-bold mb-4 text-gray-900">When our power of choice</h2>
+          <p class="text-gray-600 leading-relaxed">
+            We are a church that believes in Jesus Christ and the followers and We are a church that believes in Jesus Christ. 
+            This is where you should start. Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
+        </div>
+      </div>
+
+      <!-- Video Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="text-center">
+          <div class="relative cursor-pointer group video-thumb">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUG7UiSuR7jjtesjs_3RhZ0zM4AhnirMCESTEUmytaACqNqqG38Uxy7IGGFoIzQzT9onM&usqp=CAU" 
+                 alt="Video 1" class="rounded-sm w-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-40 rounded-sm flex items-center justify-center group-hover:bg-opacity-60 transition">
+              <div class="bg-purple-600 rounded-full p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p class="mt-3 font-semibold text-gray-800">Kenne G. Patten</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="text-center">
+          <div class="relative cursor-pointer group video-thumb">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUG7UiSuR7jjtesjs_3RhZ0zM4AhnirMCESTEUmytaACqNqqG38Uxy7IGGFoIzQzT9onM&usqp=CAU" 
+                 alt="Video 2" class="rounded-sm w-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-40 rounded-sm flex items-center justify-center group-hover:bg-opacity-60 transition">
+              <div class="bg-purple-600 rounded-full p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p class="mt-3 font-semibold text-gray-800">David M. Dahan</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="text-center">
+          <div class="relative cursor-pointer group video-thumb">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUG7UiSuR7jjtesjs_3RhZ0zM4AhnirMCESTEUmytaACqNqqG38Uxy7IGGFoIzQzT9onM&usqp=CAU" 
+                 alt="Video 3" class="rounded-sm w-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-40 rounded-sm flex items-center justify-center group-hover:bg-opacity-60 transition">
+              <div class="bg-purple-600 rounded-full p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p class="mt-3 font-semibold text-gray-800">D. Kathy Santos Kite</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="text-center">
+          <div class="relative cursor-pointer group video-thumb">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUG7UiSuR7jjtesjs_3RhZ0zM4AhnirMCESTEUmytaACqNqqG38Uxy7IGGFoIzQzT9onM&usqp=CAU" 
+                 alt="Video 4" class="rounded-sm w-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-40 rounded-sm flex items-center justify-center group-hover:bg-opacity-60 transition">
+              <div class="bg-purple-600 rounded-full p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p class="mt-3 font-semibold text-gray-800">Kim L. Bailey</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="pb-16">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12">
+   <div class="relative rounded-lg overflow-hidden shadow-lg">
+ 
+  <div class="absolute inset-0 bg-purple-600"></div>
+ 
+  <!-- content -->
+  <div class="relative z-10 flex flex-col sm:flex-row items-center justify-between py-8 px-6 sm:px-12">
+    <h2 class="text-white font-serif italic text-3xl sm:text-4xl tracking-wide" style="font-family:'Playfair Display', Georgia, serif;">Quick Donate</h2>
+
+    <div class="mt-4 sm:mt-0 flex items-center gap-3">
+      <div class="flex items-center gap-3">
+        <button aria-label="$5" class="w-14 h-9 bg-white text-gray-800 text-sm font-medium rounded-sm shadow-sm border border-white/30 hover:scale-105 transition-transform">$5</button>
+        <button aria-label="$10" class="w-14 h-9 bg-white text-gray-800 text-sm font-medium rounded-sm shadow-sm border border-white/30 hover:scale-105 transition-transform">$10</button>
+        <button aria-label="$25" class="w-14 h-9 bg-white text-gray-800 text-sm font-semibold rounded-sm shadow-md border border-white/30 hover:scale-105 transition-transform">$25</button>
+        <button aria-label="$100" class="w-14 h-9 bg-white text-gray-800 text-sm font-medium rounded-sm shadow-sm border border-white/30 hover:scale-105 transition-transform">$100</button>
+        <button aria-label="Other amount" class="w-14 h-9 bg-white text-gray-800 text-sm font-medium rounded-sm shadow-sm border border-white/30 hover:scale-105 transition-transform">Other</button>
+      </div>
+
+      <button class="ml-4 px-5 h-9 bg-white text-purple-600 text-sm font-semibold rounded-sm shadow-inner border border-black/30 hover:border-white hover:bg-purple-600 hover:text-white transition" aria-label="Donate now">DONATE NOW</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="pb-16 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12 text-center">
+    <!-- Section Heading -->
+    <p class="text-red-600 text-sm font-semibold tracking-wide mb-2">+ TRENDING ONE +</p>
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-10">Church Product</h2>
+    <p class="text-gray-600 text-base md:text-lg leading-relaxed text-center">
+       Shop faith-inspired gifts, rosaries, prayer books, candles, and family devotionals.
+ Every purchase supports parish missions and ministries.
+      </p>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+      <!-- Product Card -->
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Rosary Beads.jpg" alt="Rosary" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Rosary Beads</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$25</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Candle Set.jpg" alt="Candle Set" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Candle Set</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$29</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Gold cross.jpg" alt="Gold Cross" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Gold Cross</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$45</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Bracelet.jpg" alt="Bracelet" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Bracelet</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$19</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Prayer Book.jpg" alt="Prayer Book" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Prayer Book</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$15</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Candle Holder.jpg" alt="Candle Holder" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Candle Holder</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$22</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Incense.jpg" alt="Incense" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Incense</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$18</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Pendant.webp" alt="Pendant" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Pendant</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$27</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Holy Water.jpg" alt="Holy Water Bottle" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Holy Water Bottle</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$20</p>
+      </div>
+
+      <div class="group bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
+        <img src="./assert/images/Home Page/Silver Ring.webp" alt="Silver Ring" class="mx-auto w-28 h-28 object-contain mb-3 group-hover:scale-105 transition-transform" />
+        <h3 class="text-gray-800 font-medium text-sm">Silver Ring</h3>
+        <p class="text-red-600 text-xs font-semibold mt-1">$35</p>
+      </div>
+    </div>
+  </div>
+</section>
+<h2 class="text-3xl md:text-4xl font-semibold mb-4 leading-tight text-center">Our Ministries</h2>
+<p class="text-gray-600 text-base md:text-lg leading-relaxed text-center">
+        Building a Stronger Community Through Christ-Centered Ministries.
+      </p>      
+<section class="pb-16 bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Card -->
+      <div class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+               alt="Children Ministry"
+               class="w-full h-52 object-cover transition duration-500 group-hover:opacity-90" />
+          
+          <!-- Purple overlay rising from bottom to top -->
+          <div class="absolute inset-0 bg-purple-100 via-purple-300 to-transparent 
+                      opacity-0 group-hover:opacity-80 origin-bottom scale-y-0 group-hover:scale-y-100 
+                      transition-transform duration-500 ease-out flex items-center justify-center">
+          <img src="./assert/images/Home Page/Prayer Book.jpg" class="w-20"/>          
+          </div>
+        </div>
+        <div class="p-5 relative z-10">
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">Children & Youth Ministry:</h3>
+          <p class="text-gray-600 text-sm mb-3"> Guiding the next generation in faith.</p>
+          <a href="#" class="text-purple-700 text-sm font-semibold hover:underline">Read More</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80"
+               alt="Women's Ministry"
+               class="w-full h-52 object-cover transition duration-500 group-hover:opacity-90" />
+          <div class="absolute inset-0 bg-purple-100 via-purple-300 to-transparent 
+                      opacity-0 group-hover:opacity-80 origin-bottom scale-y-0 group-hover:scale-y-100 
+                      transition-transform duration-500 ease-out flex items-center justify-center">
+          <img src="./assert/images/Home Page/Prayer Book.jpg" class="w-20"/>          
+          </div>
+        </div>
+        <div class="p-5 relative z-10">
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">Family & Marriage Ministry:</h3>
+          <p class="text-gray-600 text-sm mb-3">Strengthening families with God’s love.</p>
+          <a href="#" class="text-purple-700 text-sm font-semibold hover:underline">Read More</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80"
+               alt="Music Ministry"
+               class="w-full h-52 object-cover transition duration-500 group-hover:opacity-90" />
+          <div class="absolute inset-0 bg-purple-100 via-purple-300 to-transparent 
+                      opacity-0 group-hover:opacity-80 origin-bottom scale-y-0 group-hover:scale-y-100 
+                      transition-transform duration-500 ease-out flex items-center justify-center">
+          <img src="./assert/images/Home Page/Prayer Book.jpg" class="w-20"/>          
+          </div>
+        </div>
+        <div class="p-5 relative z-10">
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">Choir & Music Ministry:</h3>
+          <p class="text-gray-600 text-sm mb-3">Lifting hearts through praise and worship.</p>
+          <a href="#" class="text-purple-700 text-sm font-semibold hover:underline">Read More</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80"
+               alt="Outreach Ministry"
+               class="w-full h-52 object-cover transition duration-500 group-hover:opacity-90" />
+          <div class="absolute inset-0 bg-purple-100 via-purple-300 to-transparent 
+                      opacity-0 group-hover:opacity-80 origin-bottom scale-y-0 group-hover:scale-y-100 
+                      transition-transform duration-500 ease-out flex items-center justify-center">
+          <img src="./assert/images/Home Page/Prayer Book.jpg" class="w-20"/>          
+          </div>
+        </div>
+        <div class="p-5 relative z-10">
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">Outreach Ministry</h3>
+          <p class="text-gray-600 text-sm mb-3">Extending Christ’s compassion to the poor.</p>
+          <a href="#" class="text-purple-700 text-sm font-semibold hover:underline">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- === SECTION 1: Need Prayer (Animated Purple Gradient Banner) === -->
+<section class="py-8  ">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="relative overflow-hidden rounded-lg">
+      <div class="absolute inset-0 bg-purple-600"></div>
+
+      <div class="relative z-10 flex flex-col sm:flex-row items-center justify-between py-12 px-6 sm:px-12 text-center sm:text-left animate-fade-in">
+        <div>
+          <h2 class="text-white font-serif italic text-4xl sm:text-5xl mb-3">Need Prayer?</h2>
+          <p class="text-purple-100 text-lg">No matter what you're facing, we'd love to pray with you!</p>
+        </div>
+
+        <a href="#pray" class="mt-6 sm:mt-0 inline-block border border-white text-white px-6 py-3 rounded-md text-sm font-semibold bg-white/10 hover:bg-white/30 hover:text-purple-900 transition-all duration-300 transform hover:scale-110">
+          ASK FOR PRAYER
+        </a>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+
+<!-- === SECTION 2: Latest Posts (Purple Glow Cards + Hover Animations) === -->
+<section class="py-16 bg-gray-50 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12 text-center">
+    <p class="text-purple-600 font-semibold tracking-widest uppercase">Our Blog</p>
+    <h3 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-6">Latest Posts</h3>
+
+    <div class="flex justify-center mb-10">
+      <div class="w-16 h-1 bg-purple-600 rounded-full animate-pulse"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card Template -->
+      <div class="group bg-white rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-all duration-500 hover:shadow-purple-300 hover:scale-105 animate-slide-up">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+               alt="Post" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-700/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+        <div class="p-6 text-left">
+          <h4 class="text-lg font-semibold text-gray-900 group-hover:text-purple-700 transition">Spirit Of The Lord Is, From The New Life</h4>
+          <p class="text-gray-600 text-sm mt-3">A reflection on the renewing power of the Spirit and practical ways to live a renewed life.</p>
+          <a href="#" class="inline-block mt-4 text-purple-700 font-semibold text-sm hover:underline">Read More →</a>
+        </div>
+      </div>
+
+      <div class="group bg-white rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-all duration-500 hover:shadow-purple-300 hover:scale-105 animate-slide-up delay-100">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80"
+               alt="Post" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-700/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+        <div class="p-6 text-left">
+          <h4 class="text-lg font-semibold text-gray-900 group-hover:text-purple-700 transition">Giving Back – Uganda Training Centers</h4>
+          <p class="text-gray-600 text-sm mt-3">Learn about our outreach mission and how your support changes lives around the world.</p>
+          <a href="#" class="inline-block mt-4 text-purple-700 font-semibold text-sm hover:underline">Read More →</a>
+        </div>
+      </div>
+
+      <div class="group bg-white rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-all duration-500 hover:shadow-purple-300 hover:scale-105 animate-slide-up delay-200">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+               alt="Post" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-700/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+        <div class="p-6 text-left">
+          <h4 class="text-lg font-semibold text-gray-900 group-hover:text-purple-700 transition">Help End The Water Crisis For Families</h4>
+          <p class="text-gray-600 text-sm mt-3">Learn about our clean water initiatives and how you can be part of the movement.</p>
+          <a href="#" class="inline-block mt-4 text-purple-700 font-semibold text-sm hover:underline">Read More →</a>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+
+<!-- === SECTION 3: New Member CTA (Glowing Gradient Bar + Input Animation) === -->
+<section class="py-12 relative overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    <div class="bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-500 rounded-lg shadow-xl p-10 text-white flex flex-col sm:flex-row items-center justify-between gap-6 animate-pulse-slow">
+      <div>
+        <h3 class="text-3xl font-semibold mb-2">Do You Want To Be A New Member?</h3>
+        <p class="text-purple-100">We welcome you and your family into our parish community.
+ Together, let’s walk in faith, love, and service as Friends in Christ.</p>
+      </div>
+
+      <form class="w-full sm:w-auto animate-fade-in-up" onsubmit="return false;">
+        <div class="flex items-center bg-white rounded-md shadow-inner overflow-hidden">
+          <input type="email" placeholder="Email Address" class="px-4 py-3 w-full sm:w-64 text-gray-800 focus:outline-none" required />
+          <button type="submit" class="bg-purple-700 hover:bg-purple-800 transition-all duration-300 px-4 py-3 text-white flex items-center justify-center transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!--
+<section class="pb-16 bg-gray-50 relative overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('your-background-image.jpg'); background-color: rgba(20, 10, 30, 0.8);">
+        </div>
+    <svg class="absolute bottom-0 w-full h-auto text-white z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="currentColor" fill-opacity="1" d="M0,160L48,160C96,160,192,160,288,144C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,160C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+    <svg class="absolute bottom-0 w-full h-auto text-gray-200 z-10 opacity-70" style="bottom: -20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="currentColor" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,170.7C384,171,480,149,576,149.3C672,149,768,171,864,170.7C960,171,1056,149,1152,149.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20 pt-24 pb-24 lg:pt-32 lg:pb-32">
+        <div class="flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-12">
+
+            <div class="w-full lg:w-96 bg-purple-700 text-white shadow-xl relative -mt-24 lg:-mt-40 p-10 flex flex-col items-center text-center">
+                <div class="p-4 rounded-full border-2 border-white mb-6">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L14 11.586V8a6 6 0 00-6-6h-2zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
+                </div>
+                <p class="text-3xl font-bold mb-1">Call Us</p>
+                <div class="w-10 h-0.5 bg-white mb-6"></div>
+                <p class="text-sm mb-2">664 West College St, Sun City, USA.</p>
+                <p class="text-lg font-semibold mb-6">+8 (123) 985 789</p>
+                <p class="text-sm font-light">rogonchurch@mail.com</p>
+            </div>
+
+            <div class="w-full lg:flex-1 text-white lg:pt-16">
+                <p class="uppercase text-sm font-semibold tracking-widest text-purple-300 mb-2">Get in touch</p>
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
+                    Together, <span class="text-purple-500">We Are the Church</span>
+                </h2>
+                <div class="w-16 h-1 bg-purple-500 mb-6"></div>
+
+                <p class="text-gray-300 mb-8 max-w-xl">
+                   Be part of a loving, Christ-centered community making a difference in people’s lives every day.
+                </p>
+                <a href="#" class="inline-block px-8 py-3 bg-purple-700 text-white font-semibold uppercase tracking-wider text-sm hover:bg-purple-800 transition duration-300">
+                    Become Part of Our Mission.
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+-->
+<footer class="bg-purple-900 text-gray-300 py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="mb-4">
+                    <img src="./assert/images/logo-with-white.png" alt="Friends in Christ Logo" class="h-12 w-auto mx-auto md:mx-0">
+                </div>
+                <p class="text-sm leading-relaxed max-w-xs mb-4">
+                    A welcoming Christian community dedicated to worship, fellowship, and building strong families in Christ.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-youtube text-lg"></i></a>
+                </div>
+            </div>
+
+            <div class="text-center md:text-left mt-8 md:mt-0">
+                <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition duration-300">Mother Mary</a></li>
+                    <li><a href="https://quiz.friendsinchrist.in/" class="hover:text-white transition duration-300">Bible Quiz</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Catechism</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Saints</a></li>
+                </ul>
+            </div>
+
+            <div class="text-center md:text-left mt-8 lg:mt-0">
+                <h4 class="text-lg font-semibold text-white mb-4">More Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition duration-300">Hymn</a></li>
+                    <li><a href="/liturgy.html" class="hover:text-white transition duration-300">Liturgy</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">About us</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="text-center md:text-left mt-8 lg:mt-0">
+                <h4 class="text-lg font-semibold text-white mb-4">Contact Info</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center justify-center md:justify-start">
+                        <svg class="w-5 h-5 mr-2 text-purple-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 110-4 2 2 0 010 4z" clip-rule="evenodd"></path></svg>
+                        <span>664 West College St, Sun City, USA.</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start">
+                        <svg class="w-5 h-5 mr-2 text-purple-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        <span>+8 (123) 985 789</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start">
+                        <svg class="w-5 h-5 mr-2 text-purple-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        <span>rogonchurch@mail.com</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm">
+            <p>Copyright &copy; 2025 Friends in Christ | All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+  <div class="relative w-full max-w-3xl p-4">
+    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">&times;</button>
+      <div class="relative" style="padding-top:56.25%">
+        <iframe id="videoFrame" class="absolute top-0 left-0 w-full h-full rounded-lg" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="assert/js/app.js"></script>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const header = document.getElementById("header");
+    const scrolled = window.scrollY > 10;
+
+    if (scrolled) {
+      header.classList.add("bg-white", "shadow-md");
+      header.classList.remove("bg-transparent");
+
+      // change all text + svg icons to black
+      header.querySelectorAll("a, button, svg, span, p, li").forEach((el) => {
+        el.style.color = "#000";
+        el.style.fill = "#000";
+        el.style.stroke = "#000";
+      });
+
+      // keep donate button white text
+      const donate = header.querySelector("button.bg-indigo-600");
+      if (donate) donate.style.color = "#fff";
+    } else {
+      header.classList.remove("bg-white", "shadow-md");
+      header.classList.add("bg-transparent");
+
+      // revert all text + svg icons to gray
+      header.querySelectorAll("a, button, svg, span, p, li").forEach((el) => {
+        el.style.color = "";
+        el.style.fill = "";
+        el.style.stroke = "";
+      });
+    }
+  });
+</script>
+
+
+
+
+</body>
+
+</html>
